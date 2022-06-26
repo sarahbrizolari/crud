@@ -28,6 +28,6 @@ def update_Locacao(request, id):
 def delete_Locacao(request, id):
     Loc = Locacao.objects.get(id=id)
     if request.method == 'POST':
-        Locacao.delete()
+        Loc.delete()
         return redirect('list_Locacao')
-    return render(request, 'Locacao-delete-confirm.html', {'Locacao': Loc})
+    return render(request, 'Locacao-delete-confirm.html', {'Loc': Loc})

@@ -1,5 +1,6 @@
 from django import forms
-from estacionamento.models import Locacao, Carro, Cliente, Funcionario, Fornecedor, Seguranca, Vagas
+from estacionamento.models import Locacao
+''', Carro, Cliente, Funcionario, Fornecedor, Seguranca, Vagas
 
 
 class CarroForm(forms.ModelForm):
@@ -37,7 +38,7 @@ class VagasForm(forms.ModelForm):
         model = Vagas
         fields = ['descricao']
 
-
+'''
 class LocacaoForm(forms.ModelForm):
     class Meta:
         model = Locacao

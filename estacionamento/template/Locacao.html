@@ -1,0 +1,26 @@
+{% endblock %}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <ul>
+
+        <h2>Registro de Locação</h2>
+        {% for Locacao in Locacoes %}
+
+                <li>
+                {{ Locacao.cliente }} - {{ Locacao.carro }} - {{ Locacao.funcionario }} - {{ Locacao.dataLocacao }} - {{ Locacao.valor }} - {{ Locacao.dataDevolucao }}
+                 <div>
+                      <a href="{% url 'delete_Locacao' Locacao.id %}" class="btn btn-danger">Excluir</a>
+                      <a href="{% url 'update_Locacao' Locacao.id %}" class="btn btn-primary">Atualizar</a>
+                  </div>
+                </li>
+
+
+            {% endfor %}
+
+    </ul>
+        <div>
+        <a class="btn btn-primary" href="{% url 'create_Locacao' %}">Adicionar Locacao</a>
+        <a class="btn btn-light" href="{% url 'list_Locacao' %}">Voltar</a>
+    </div>
+{% endblock %}
